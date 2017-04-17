@@ -18,6 +18,7 @@
 		E29A795E1EA54AE10075E29C /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79581EA54AE10075E29C /* RequestManager.swift */; };
 		E29A795F1EA54AE10075E29C /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79591EA54AE10075E29C /* TimeConverter.swift */; };
 		E29A79691EA556550075E29C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79681EA556550075E29C /* Base.swift */; };
+		E6184F521EA569FD0071E3DD /* GraphicsUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6184F511EA569FD0071E3DD /* GraphicsUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E29A79581EA54AE10075E29C /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		E29A79591EA54AE10075E29C /* TimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		E29A79681EA556550075E29C /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		E6184F511EA569FD0071E3DD /* GraphicsUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicsUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				E29A79491EA549C80075E29C /* Assets.xcassets */,
 				E29A79421EA549C80075E29C /* AppDelegate.swift */,
 				E29A794E1EA549C80075E29C /* Info.plist */,
+				E6184F511EA569FD0071E3DD /* GraphicsUtilities.swift */,
 			);
 			path = MyRecipe;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				E29A79431EA549C80075E29C /* AppDelegate.swift in Sources */,
 				E29A79691EA556550075E29C /* Base.swift in Sources */,
 				E29A795F1EA54AE10075E29C /* TimeConverter.swift in Sources */,
+				E6184F521EA569FD0071E3DD /* GraphicsUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
