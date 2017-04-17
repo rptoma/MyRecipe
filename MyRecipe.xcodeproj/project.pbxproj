@@ -94,6 +94,7 @@
 				E29A79631EA54B220075E29C /* Cells */,
 				E29A79641EA54B2A0075E29C /* Webservices */,
 				E29A79651EA54B320075E29C /* Data converters */,
+				E29A796A1EA55C3F0075E29C /* Base */,
 				E29A79491EA549C80075E29C /* Assets.xcassets */,
 				E29A79421EA549C80075E29C /* AppDelegate.swift */,
 				E29A794E1EA549C80075E29C /* Info.plist */,
@@ -130,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				E29A79571EA54AE10075E29C /* RecipeTableViewCell.swift */,
-				E29A79681EA556550075E29C /* Base.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -149,6 +149,14 @@
 				E29A79591EA54AE10075E29C /* TimeConverter.swift */,
 			);
 			name = "Data converters";
+			sourceTree = "<group>";
+		};
+		E29A796A1EA55C3F0075E29C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E29A79681EA556550075E29C /* Base.swift */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
