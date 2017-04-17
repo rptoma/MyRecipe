@@ -17,6 +17,7 @@
 		E29A795D1EA54AE10075E29C /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79571EA54AE10075E29C /* RecipeTableViewCell.swift */; };
 		E29A795E1EA54AE10075E29C /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79581EA54AE10075E29C /* RequestManager.swift */; };
 		E29A795F1EA54AE10075E29C /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79591EA54AE10075E29C /* TimeConverter.swift */; };
+		E29A79691EA556550075E29C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79681EA556550075E29C /* Base.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		E29A79571EA54AE10075E29C /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		E29A79581EA54AE10075E29C /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		E29A79591EA54AE10075E29C /* TimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
+		E29A79681EA556550075E29C /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				E29A79571EA54AE10075E29C /* RecipeTableViewCell.swift */,
+				E29A79681EA556550075E29C /* Base.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				E29A795E1EA54AE10075E29C /* RequestManager.swift in Sources */,
 				E29A795C1EA54AE10075E29C /* RecipesTableViewController.swift in Sources */,
 				E29A79431EA549C80075E29C /* AppDelegate.swift in Sources */,
+				E29A79691EA556550075E29C /* Base.swift in Sources */,
 				E29A795F1EA54AE10075E29C /* TimeConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
