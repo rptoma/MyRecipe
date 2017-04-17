@@ -35,12 +35,12 @@ class RecipeTableViewCell: UITableViewCell {
                     self.backgroundImageView.image = image
                 }
                 else {
-                    self.backgroundImageView.image = UIImage(named: "default_image.jpg")
+                    self.backgroundImageView.image = UIImage(named: Base.DEFAULT_IMAGE_PATH)
                 }
             })
         }
         else {
-            backgroundImageView.image = UIImage(named: "default_image.jpg")
+            backgroundImageView.image = UIImage(named: Base.DEFAULT_IMAGE_PATH)
         }
     }
     

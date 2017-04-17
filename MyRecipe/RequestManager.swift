@@ -11,7 +11,7 @@ import Alamofire
 
 class RequestManager {
     
-    private let recipeListBaseURL = "https://private-anon-c6e411992b-myrecipes1.apiary-mock.com/api/v1/recipes?page="
+    private let recipeListBaseURL = Base.RECIPES_LIST_BASE_URL!
     
     public func requestRecipes(forPage page: Int, completionHandler: @escaping (_ result: [Recipe]?, _ error: String?) ->()) {
         
