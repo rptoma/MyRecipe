@@ -99,7 +99,7 @@
 				E29A79491EA549C80075E29C /* Assets.xcassets */,
 				E29A79421EA549C80075E29C /* AppDelegate.swift */,
 				E29A794E1EA549C80075E29C /* Info.plist */,
-				E6184F511EA569FD0071E3DD /* GraphicsUtilities.swift */,
+				E6184F551EA56AC90071E3DD /* New Group */,
 			);
 			path = MyRecipe;
 			sourceTree = "<group>";
@@ -152,6 +152,14 @@
 				E29A79591EA54AE10075E29C /* TimeConverter.swift */,
 			);
 			name = "Data converters";
+			sourceTree = "<group>";
+		};
+		E6184F551EA56AC90071E3DD /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				E6184F511EA569FD0071E3DD /* GraphicsUtilities.swift */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
