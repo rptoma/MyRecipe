@@ -18,18 +18,9 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for a recipe" id="oKT-UP-Hgc">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="barTintColor" red="0.80875653028488159" green="0.20478525757789612" blue="0.19042211771011353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                            <scopeButtonTitles>
-                                <string>Title</string>
-                            </scopeButtonTitles>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="160" id="uUc-pd-QCv" customClass="RecipeTableViewCell" customModule="MyRecipe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="160"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uUc-pd-QCv" id="UR8-cZ-EpY">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>

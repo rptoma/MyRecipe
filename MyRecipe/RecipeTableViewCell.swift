@@ -15,7 +15,6 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var difficultyLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var backgroundImageViewBlur: UIImageView!
     
     var uid: String!
     
