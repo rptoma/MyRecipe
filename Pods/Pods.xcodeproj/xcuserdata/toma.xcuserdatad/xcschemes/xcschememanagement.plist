@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MyRecipe.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>708458B66FBFED150E1E108DACBAF51F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C58C38D52520076E5316B8422C42E82E</key>
+		<key>C4944FEC314D1A66588651D006273ADE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
