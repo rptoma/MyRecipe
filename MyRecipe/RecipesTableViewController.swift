@@ -15,6 +15,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
     var recipes = [Recipe]() {
         didSet {
             if searchController.isActive == true {
+                tableView.setContentOffset(CGPoint.zero, animated: true)
                 recipeRequest()
             }
             else {
@@ -50,7 +51,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
     func recipeSearchRequest() {
         requestManager.requestRecipes(forPage: pageNumberSearch, completionHandler: { (result, error) in
             if error == nil {
-                print("made request search")
+                print("made search request")
                 self.searchRecipes += result!
                 self.pageNumberSearch = self.pageNumberSearch + 1
             }
@@ -81,8 +82,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
-        
-        if searchController.isActive == false {
+        if searchController.isActive == false && indexPath.row < recipes.count && recipes.count != 0 {
             cell.loadRecipePreview(recipe: recipes[indexPath.row])
             if indexPath.row == recipes.count - 1 {
                 recipeRequest()
@@ -117,6 +117,8 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchRecipes = [Recipe]()
+        pageNumberSearch = 0
+        pageNumber = 0
         recipeSearchRequest()
     }
     
