@@ -17,6 +17,8 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var backgroundImageViewBlur: UIImageView!
     
+    var uid: String!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -48,6 +50,7 @@ class RecipeTableViewCell: UITableViewCell {
         nameLabel.text = recipe.name
         durationLabel.text = "~" + TimeConverter.getTime(from: recipe.duration ?? 0)
         difficultyLabel.text = recipe.difficulty
+        uid = recipe.uid
         loadImage(from: recipe.icon_image)
     }
     
