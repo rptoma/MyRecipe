@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate {
+class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -32,8 +32,8 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
     
     let requestManager = RequestManager()
     
-    var pageNumber = 0
-    var pageNumberSearch = 0
+    var pageNumber: Int!
+    var pageNumberSearch: Int!
     
     func recipeRequest() {
         requestManager.requestRecipes(forPage: pageNumber) { (result, error) in
@@ -48,10 +48,10 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
         }
     }
     
-    func recipeSearchRequest(query: String, page: Int) {
-        requestManager.requestRecipes(forQuery: query, forPage: page) { (result, error) in
+    func recipeSearchRequest(query: String) {
+        requestManager.requestRecipes(forQuery: query, forPage: pageNumberSearch) { (result, error) in
             if error == nil {
-                print("made search request for page \(page)")
+                print("made search request for page \(self.pageNumberSearch)")
                 self.searchRecipes += result!
                 self.pageNumberSearch = self.pageNumberSearch + 1
             }
@@ -60,11 +60,15 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
     
     func setupSearchBar() {
         searchController.searchBar.delegate = self
-        searchController.delegate = self
         
         searchController.dimsBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = "Search for a recipe"
+        
+        searchController.searchBar.barTintColor = navigationController?.navigationBar.barTintColor
+        searchController.searchBar.tintColor = UIColor.white
+        
+        
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
     }
@@ -98,7 +102,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
         else {
             cell.loadRecipePreview(recipe: searchRecipes[indexPath.row])
             if indexPath.row == searchRecipes.count - 1 {
-                recipeSearchRequest(query: "hamburgers for vegans", page: pageNumberSearch)
+                recipeSearchRequest(query: "hamburgers for vegans")
             }
         }
         
@@ -126,7 +130,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
         searchRecipes = [Recipe]()
         pageNumberSearch = 0
         pageNumber = 0
-        recipeSearchRequest(query: "hamburgers for vegans", page: pageNumberSearch)
+        recipeSearchRequest(query: "hamburgers for vegans")
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
