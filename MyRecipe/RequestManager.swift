@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import Kingfisher
 
 class RequestManager {
     
@@ -104,16 +105,6 @@ class RequestManager {
             }
             
             completionHandler(result, error)
-        }
-    }
-    
-    public func requestImage(for url: String, completionHandler: @escaping (UIImage?) -> ()) {
-        var image: UIImage?
-        Alamofire.request(url).validate().response { (response) in
-            if let data = response.data {
-                image =  UIImage(data: data)
-                completionHandler(image)
-            }
         }
     }
 }

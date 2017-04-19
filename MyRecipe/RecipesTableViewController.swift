@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate {
     
@@ -58,12 +59,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
         })
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
+    func setupSearchBar() {
         searchController.searchBar.delegate = self
         searchController.delegate = self
         
@@ -72,6 +68,18 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
         searchController.searchBar.placeholder = "Search for a recipe"
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupTableView()
+        setupSearchBar()
         
         pageNumber = 0
         pageNumberSearch = 0
