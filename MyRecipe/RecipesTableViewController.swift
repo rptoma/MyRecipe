@@ -35,27 +35,21 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     var pageNumber: Int!
     var pageNumberSearch: Int!
     
-    func recipeRequest() {
-        requestManager.requestRecipes(forPage: pageNumber) { (result, error) in
-            if error == nil {
-                print("made list request for page \(self.pageNumber)")
-                self.recipes += result!
-                self.pageNumber = self.pageNumber + 1
-            }
-            else {
-                print(error!)
-            }
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupTableView()
+        setupSearchBar()
+        
+        pageNumber = 0
+        pageNumberSearch = 0
+        
+        recipeRequest()
     }
     
-    func recipeSearchRequest(query: String) {
-        requestManager.requestRecipes(forQuery: query, forPage: pageNumberSearch) { (result, error) in
-            if error == nil {
-                print("made search request for page \(self.pageNumberSearch)")
-                self.searchRecipes += result!
-                self.pageNumberSearch = self.pageNumberSearch + 1
-            }
-        }
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+        //tableView.setContentOffset(CGPoint.zero, animated: false)
     }
     
     func setupSearchBar() {
@@ -68,7 +62,6 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         searchController.searchBar.barTintColor = navigationController?.navigationBar.barTintColor
         searchController.searchBar.tintColor = UIColor.white
         
-        
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
     }
@@ -78,16 +71,26 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         tableView.dataSource = self
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setupTableView()
-        setupSearchBar()
-        
-        pageNumber = 0
-        pageNumberSearch = 0
-        
-        recipeRequest()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+                case "Show Recipe Steps":
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    print(indexPath.row)
+                    if let vc = segue.destination as? RecipeStepslViewController {
+                        //print(indexPath.row)
+                        if searchController.isActive == true {
+                            vc.recipe = searchRecipes[indexPath.row]
+                        }
+                        else {
+                            vc.recipe = recipes[indexPath.row]
+                        }
+                    }
+                }
+                default:
+                    break
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -108,7 +111,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         
         return cell
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -119,6 +122,29 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         }
         else {
             return recipes.count
+        }
+    }
+    
+    func recipeRequest() {
+        requestManager.requestRecipes(forPage: pageNumber) { (result, error) in
+            if error == nil {
+                print("made list request for page \(self.pageNumber)")
+                self.recipes += result!
+                self.pageNumber = self.pageNumber + 1
+            }
+            else {
+                print(error!)
+            }
+        }
+    }
+    
+    func recipeSearchRequest(query: String) {
+        requestManager.requestRecipes(forQuery: query, forPage: pageNumberSearch) { (result, error) in
+            if error == nil {
+                print("made search request for page \(self.pageNumberSearch)")
+                self.searchRecipes += result!
+                self.pageNumberSearch = self.pageNumberSearch + 1
+            }
         }
     }
     
