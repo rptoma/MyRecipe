@@ -15,7 +15,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
     var recipes = [Recipe]() {
         didSet {
             if searchController.isActive == true {
-                tableView.setContentOffset(CGPoint.zero, animated: true)
+                tableView.setContentOffset(CGPoint.zero, animated: false)
                 recipeRequest()
             }
             else {
@@ -38,7 +38,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
     func recipeRequest() {
         requestManager.requestRecipes(forPage: pageNumber) { (result, error) in
             if error == nil {
-                print("made list request")
+                print("made list request for page \(self.pageNumber)")
                 self.recipes += result!
                 self.pageNumber = self.pageNumber + 1
             }
@@ -51,7 +51,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
     func recipeSearchRequest(query: String, page: Int) {
         requestManager.requestRecipes(forQuery: query, forPage: page) { (result, error) in
             if error == nil {
-                print("made search request")
+                print("made search request for page \(page)")
                 self.searchRecipes += result!
                 self.pageNumberSearch = self.pageNumberSearch + 1
             }
@@ -129,6 +129,13 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
         recipeSearchRequest(query: "hamburgers for vegans", page: pageNumberSearch)
     }
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.tableView.isScrollEnabled = false
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        self.tableView.isScrollEnabled = true
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
