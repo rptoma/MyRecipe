@@ -62,13 +62,12 @@ class RequestManager {
     
     public func requestRecipes(forQuery query: String, forPage page: Int, completionHandler: @escaping (_ result: [Recipe]?, _ error: String?) ->()) {
         
-        let queryWithPlus = query.replacingOccurrences(of: " ", with: "+")
+        let parameters: Parameters = [
+            "page": page,
+            "keywords": query
+        ]
         
-        let requestURL = recipesSearchListBaseURL! + queryWithPlus + "?page=" + String(page)
-        print(requestURL)
-        
-        Alamofire.request(requestURL).validate().responseJSON { response in
-            
+        Alamofire.request(Base.RECIPES_SEARCH_LIST_BASE_URL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             var result: [Recipe]?
             var error: String?
             
@@ -107,4 +106,5 @@ class RequestManager {
             completionHandler(result, error)
         }
     }
+
 }

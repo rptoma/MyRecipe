@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate {
     
@@ -49,14 +48,14 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
         }
     }
     
-    func recipeSearchRequest() {
-        requestManager.requestRecipes(forPage: pageNumberSearch, completionHandler: { (result, error) in
+    func recipeSearchRequest(query: String, page: Int) {
+        requestManager.requestRecipes(forQuery: query, forPage: page) { (result, error) in
             if error == nil {
                 print("made search request")
                 self.searchRecipes += result!
                 self.pageNumberSearch = self.pageNumberSearch + 1
             }
-        })
+        }
     }
     
     func setupSearchBar() {
@@ -99,7 +98,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
         else {
             cell.loadRecipePreview(recipe: searchRecipes[indexPath.row])
             if indexPath.row == searchRecipes.count - 1 {
-                recipeSearchRequest()
+                recipeSearchRequest(query: "hamburgers for vegans", page: pageNumberSearch)
             }
         }
         
@@ -127,7 +126,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate, UI
         searchRecipes = [Recipe]()
         pageNumberSearch = 0
         pageNumber = 0
-        recipeSearchRequest()
+        recipeSearchRequest(query: "hamburgers for vegans", page: pageNumberSearch)
     }
     
     
