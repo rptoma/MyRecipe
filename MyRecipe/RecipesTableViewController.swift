@@ -38,18 +38,17 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isTranslucent = false
+        
         setupTableView()
         setupSearchBar()
         
         pageNumber = 0
         pageNumberSearch = 0
         
+        self.tableView.setValue(navigationController?.navigationBar.barTintColor , forKey: "tableHeaderBackgroundColor")
+
         recipeRequest()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData()
-        //tableView.setContentOffset(CGPoint.zero, animated: false)
     }
     
     func setupSearchBar() {
@@ -59,6 +58,8 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = "Search for a recipe"
         
+        searchController.searchBar.isOpaque = true
+        searchController.searchBar.isTranslucent = false
         searchController.searchBar.barTintColor = navigationController?.navigationBar.barTintColor
         searchController.searchBar.tintColor = UIColor.white
         
@@ -70,12 +71,12 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
                 case "Show Recipe Steps":
-                if let indexPath = tableView.indexPathForSelectedRow {
+                if let indexPath = tableView.indexPath(for: sender as! RecipeTableViewCell) {
                     print(indexPath.row)
                     if let vc = segue.destination as? RecipeStepslViewController {
                         //print(indexPath.row)
@@ -93,18 +94,22 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
+    func nearUpdateRow(currentIndexPath indexPath: IndexPath) -> Bool {
+        return indexPath.row == recipes.count - 1
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
         if searchController.isActive == false && indexPath.row < recipes.count && recipes.count != 0 {
             cell.loadRecipePreview(recipe: recipes[indexPath.row])
-            if indexPath.row == recipes.count - 1 {
+            if nearUpdateRow(currentIndexPath: indexPath) {
                 recipeRequest()
             }
         }
         else {
             cell.loadRecipePreview(recipe: searchRecipes[indexPath.row])
-            if indexPath.row == searchRecipes.count - 1 {
+            if nearUpdateRow(currentIndexPath: indexPath) {
                 recipeSearchRequest(query: "hamburgers for vegans")
             }
         }
@@ -160,11 +165,13 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        self.tableView.isScrollEnabled = false
+        tableView.isScrollEnabled = false
+        tableView.allowsSelection = false
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        self.tableView.isScrollEnabled = true
+        tableView.isScrollEnabled = true
+        tableView.allowsSelection = true
     }
     
     override func didReceiveMemoryWarning() {

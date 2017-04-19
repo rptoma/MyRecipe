@@ -14,7 +14,7 @@ class RecipeStepslViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(recipe?.name)
+        navigationController?.navigationBar.tintColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {
