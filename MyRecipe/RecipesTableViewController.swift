@@ -8,55 +8,112 @@
 
 import UIKit
 
-class RecipesTableViewController: UITableViewController {
+class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     var recipes = [Recipe]() {
+        didSet {
+            if searchController.isActive == true {
+                tableView.setContentOffset(CGPoint.zero, animated: false)
+                recipeRequest()
+            }
+            else {
+                tableView.reloadData()
+            }
+        }
+    }
+    
+    var searchRecipes = [Recipe]() {
         didSet {
             tableView.reloadData()
         }
     }
     
-    let recipeAPI = RequestManager()
+    let requestManager = RequestManager()
     
-    var pageNumber = 0
+    var pageNumber: Int!
+    var pageNumberSearch: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        self.navigationController?.navigationBar.isTranslucent = false
+        
+        setupTableView()
+        setupSearchBar()
         
         pageNumber = 0
+        pageNumberSearch = 0
         
-        recipeAPI.requestRecipes(forPage: pageNumber) { (result, error) in
-            if error == nil {
-                self.recipes += result!
-            }
-            else {
-                print(error!)
+        self.tableView.setValue(navigationController?.navigationBar.barTintColor , forKey: "tableHeaderBackgroundColor")
+
+        recipeRequest()
+    }
+    
+    func setupSearchBar() {
+        searchController.searchBar.delegate = self
+        
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "Search for a recipe"
+        
+        searchController.searchBar.isOpaque = true
+        searchController.searchBar.isTranslucent = false
+        searchController.searchBar.barTintColor = navigationController?.navigationBar.barTintColor
+        searchController.searchBar.tintColor = UIColor.white
+        
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+                case "Show Recipe Steps":
+                if let indexPath = tableView.indexPath(for: sender as! RecipeTableViewCell) {
+                    print(indexPath.row)
+                    if let vc = segue.destination as? RecipeStepslViewController {
+                        //print(indexPath.row)
+                        if searchController.isActive == true {
+                            vc.recipe = searchRecipes[indexPath.row]
+                        }
+                        else {
+                            vc.recipe = recipes[indexPath.row]
+                        }
+                    }
+                }
+                default:
+                    break
             }
         }
     }
     
+    func nearUpdateRow(currentIndexPath indexPath: IndexPath) -> Bool {
+        return indexPath.row == recipes.count - 1
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        print(pageNumber)
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
-        
-        cell.loadRecipePreview(recipe: recipes[indexPath.row])
-        
-        if indexPath.row == recipes.count - 1 {
-            recipeAPI.requestRecipes(forPage: pageNumber, completionHandler: { (result, error) in
-                if error == nil {
-                    self.recipes += result!
-                    self.pageNumber = self.pageNumber + 1
-                }
-                else {
-                    print(error!)
-                }
-            })
+        if searchController.isActive == false && indexPath.row < recipes.count && recipes.count != 0 {
+            cell.loadRecipePreview(recipe: recipes[indexPath.row])
+            if nearUpdateRow(currentIndexPath: indexPath) {
+                recipeRequest()
+            }
         }
+        else {
+            cell.loadRecipePreview(recipe: searchRecipes[indexPath.row])
+            if nearUpdateRow(currentIndexPath: indexPath) {
+                recipeSearchRequest(query: "hamburgers for vegans")
+            }
+        }
+        
         return cell
     }
     
@@ -65,13 +122,62 @@ class RecipesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipes.count
+        if searchController.isActive {
+            return searchRecipes.count
+        }
+        else {
+            return recipes.count
+        }
     }
+    
+    func recipeRequest() {
+        requestManager.requestRecipes(forPage: pageNumber) { (result, error) in
+            if error == nil {
+                print("made list request for page \(self.pageNumber)")
+                self.recipes += result!
+                self.pageNumber = self.pageNumber + 1
+            }
+            else {
+                print(error!)
+            }
+        }
+    }
+    
+    func recipeSearchRequest(query: String) {
+        requestManager.requestRecipes(forQuery: query, forPage: pageNumberSearch) { (result, error) in
+            if error == nil {
+                print("made search request for page \(self.pageNumberSearch)")
+                self.searchRecipes += result!
+                self.pageNumberSearch = self.pageNumberSearch + 1
+            }
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        recipes = [Recipe]()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchRecipes = [Recipe]()
+        pageNumberSearch = 0
+        pageNumber = 0
+        recipeSearchRequest(query: "hamburgers for vegans")
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        tableView.isScrollEnabled = false
+        tableView.allowsSelection = false
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        tableView.isScrollEnabled = true
+        tableView.allowsSelection = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
