@@ -1,5 +1,5 @@
 //
-//  RecipeStepslViewController.swift
+//  RecipeStepsViewController.swift
 //  MyRecipe
 //
 //  Created by Toma Radu-Petrescu on 19/04/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipeStepslViewController: UIViewController {
+class RecipeStepsViewController: UIViewController {
 
     var recipe: Recipe?
     

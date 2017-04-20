@@ -18,7 +18,7 @@
 		E29A795E1EA54AE10075E29C /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79581EA54AE10075E29C /* RequestManager.swift */; };
 		E29A795F1EA54AE10075E29C /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79591EA54AE10075E29C /* TimeConverter.swift */; };
 		E29A79691EA556550075E29C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79681EA556550075E29C /* Base.swift */; };
-		E2DAAAE31EA7A49E00A279F5 /* RecipeStepslViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DAAAE21EA7A49E00A279F5 /* RecipeStepslViewController.swift */; };
+		E2DAAAE31EA7A49E00A279F5 /* RecipeStepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DAAAE21EA7A49E00A279F5 /* RecipeStepsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		E29A79581EA54AE10075E29C /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		E29A79591EA54AE10075E29C /* TimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		E29A79681EA556550075E29C /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
-		E2DAAAE21EA7A49E00A279F5 /* RecipeStepslViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeStepslViewController.swift; sourceTree = "<group>"; };
+		E2DAAAE21EA7A49E00A279F5 /* RecipeStepsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeStepsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +124,7 @@
 		E29A79621EA54B190075E29C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E2DAAAE21EA7A49E00A279F5 /* RecipeStepslViewController.swift */,
+				E2DAAAE21EA7A49E00A279F5 /* RecipeStepsViewController.swift */,
 				E29A79561EA54AE10075E29C /* RecipesTableViewController.swift */,
 			);
 			name = Controllers;
@@ -288,7 +288,7 @@
 			files = (
 				E29A795B1EA54AE10075E29C /* Recipe.swift in Sources */,
 				E29A795D1EA54AE10075E29C /* RecipeTableViewCell.swift in Sources */,
-				E2DAAAE31EA7A49E00A279F5 /* RecipeStepslViewController.swift in Sources */,
+				E2DAAAE31EA7A49E00A279F5 /* RecipeStepsViewController.swift in Sources */,
 				E29A795E1EA54AE10075E29C /* RequestManager.swift in Sources */,
 				E29A795C1EA54AE10075E29C /* RecipesTableViewController.swift in Sources */,
 				E29A79431EA549C80075E29C /* AppDelegate.swift in Sources */,

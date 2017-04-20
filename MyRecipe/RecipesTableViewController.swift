@@ -78,7 +78,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
                 case "Show Recipe Steps":
                 if let indexPath = tableView.indexPath(for: sender as! RecipeTableViewCell) {
                     print(indexPath.row)
-                    if let vc = segue.destination as? RecipeStepslViewController {
+                    if let vc = segue.destination as? RecipeStepsViewController {
                         //print(indexPath.row)
                         if searchController.isActive == true {
                             vc.recipe = searchRecipes[indexPath.row]
