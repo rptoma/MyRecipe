@@ -12,6 +12,12 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     
     let searchController = UISearchController(searchResultsController: nil)
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        get {
+            return .lightContent
+        }
+    }
+    
     var recipes = [Recipe]() {
         didSet {
 //            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
