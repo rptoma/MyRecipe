@@ -34,6 +34,7 @@ class RecipeTableViewCell: UITableViewCell {
             if let url = URL(string: imgUrl) {
                 let resource = ImageResource(downloadURL: url, cacheKey: nil)
                 let processor = BlurImageProcessor(blurRadius: 4.1)
+                backgroundImageView.kf.indicatorType = .activity
                 backgroundImageView.kf.setImage(with: resource, placeholder: nil, options: [.processor(processor)], progressBlock: nil, completionHandler: nil)
             }
         }

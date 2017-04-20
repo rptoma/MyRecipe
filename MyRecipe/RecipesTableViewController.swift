@@ -14,8 +14,12 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     
     var recipes = [Recipe]() {
         didSet {
+//            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//            self.navigationController?.navigationBar.shadowImage = UIImage()
+            
+            //searchController.searchBar.backgroundColor = navigationController?.navigationBar.barTintColor
+            
             if searchController.isActive == true {
-                tableView.setContentOffset(CGPoint.zero, animated: false)
                 recipeRequest()
             }
             else {
@@ -55,13 +59,14 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         searchController.searchBar.delegate = self
         
         searchController.dimsBackgroundDuringPresentation = false
-        searchController.hidesNavigationBarDuringPresentation = false
+        //searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = "Search for a recipe"
-        
-        searchController.searchBar.isOpaque = true
-        searchController.searchBar.isTranslucent = false
+
         searchController.searchBar.barTintColor = navigationController?.navigationBar.barTintColor
         searchController.searchBar.tintColor = UIColor.white
+        searchController.searchBar.isTranslucent = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
@@ -94,8 +99,12 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
-    func nearUpdateRow(currentIndexPath indexPath: IndexPath) -> Bool {
+    func nearRowUpdate(currentIndexPath indexPath: IndexPath) -> Bool {
         return indexPath.row == recipes.count - 1
+    }
+    
+    func nearSearchRowUpdate(currentIndexPath indexPath: IndexPath) -> Bool {
+        return indexPath.row == searchRecipes.count - 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,13 +112,13 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
         if searchController.isActive == false && indexPath.row < recipes.count && recipes.count != 0 {
             cell.loadRecipePreview(recipe: recipes[indexPath.row])
-            if nearUpdateRow(currentIndexPath: indexPath) {
+            if nearRowUpdate(currentIndexPath: indexPath) {
                 recipeRequest()
             }
         }
         else {
             cell.loadRecipePreview(recipe: searchRecipes[indexPath.row])
-            if nearUpdateRow(currentIndexPath: indexPath) {
+            if nearSearchRowUpdate(currentIndexPath: indexPath) {
                 recipeSearchRequest(query: "hamburgers for vegans")
             }
         }
@@ -153,8 +162,13 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//        tableView.setContentOffset(CGPoint.zero, animated: false)
+//    }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         recipes = [Recipe]()
+        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -180,4 +194,3 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
 }
-

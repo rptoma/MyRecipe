@@ -14,7 +14,7 @@
         <scene sceneID="QOk-nB-ah9">
             <objects>
                 <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="2k2-P9-sr7" customClass="RecipesTableViewController" customModule="MyRecipe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="159" sectionHeaderHeight="28" sectionFooterHeight="28" id="fj8-U0-D0V">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="159" sectionHeaderHeight="28" sectionFooterHeight="28" id="fj8-U0-D0V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uUc-pd-QCv" id="UR8-cZ-EpY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8is-Tr-hse">
@@ -102,7 +102,7 @@
         <!--Recipe Stepsl View Controller-->
         <scene sceneID="89W-fT-AiO">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="wr8-2Q-7Na" customClass="RecipeStepslViewController" customModule="MyRecipe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="wr8-2Q-7Na" customClass="RecipeStepslViewController" customModule="MyRecipe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t2N-F0-ba0"/>
                         <viewControllerLayoutGuide type="bottom" id="FXU-bb-GvC"/>
@@ -125,7 +125,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="bCA-AJ-cKU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         <color key="barTintColor" red="0.80875653028488159" green="0.20478525757789612" blue="0.19042211771011353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
