@@ -19,6 +19,7 @@
 		E29A795F1EA54AE10075E29C /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79591EA54AE10075E29C /* TimeConverter.swift */; };
 		E29A79691EA556550075E29C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79681EA556550075E29C /* Base.swift */; };
 		E2DAAAE31EA7A49E00A279F5 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DAAAE21EA7A49E00A279F5 /* RecipeDetailViewController.swift */; };
+		E6B10EEF1EAAA6520010F974 /* RecipeStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B10EEE1EAAA6520010F974 /* RecipeStep.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E29A79591EA54AE10075E29C /* TimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		E29A79681EA556550075E29C /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		E2DAAAE21EA7A49E00A279F5 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		E6B10EEE1EAAA6520010F974 /* RecipeStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeStep.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				E29A79551EA54AE10075E29C /* Recipe.swift */,
+				E6B10EEE1EAAA6520010F974 /* RecipeStep.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				E2DAAAE31EA7A49E00A279F5 /* RecipeDetailViewController.swift in Sources */,
 				E29A795E1EA54AE10075E29C /* RequestManager.swift in Sources */,
 				E29A795C1EA54AE10075E29C /* RecipesTableViewController.swift in Sources */,
+				E6B10EEF1EAAA6520010F974 /* RecipeStep.swift in Sources */,
 				E29A79431EA549C80075E29C /* AppDelegate.swift in Sources */,
 				E29A79691EA556550075E29C /* Base.swift in Sources */,
 				E29A795F1EA54AE10075E29C /* TimeConverter.swift in Sources */,
