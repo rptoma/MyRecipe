@@ -30,10 +30,6 @@ class RecipeDetailViewController: UIViewController {
     }
 
     
-    @IBAction func startButtonAction(_ sender: Any) {
-        performSegue(withIdentifier: "Start and Show Step", sender: sender)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
