@@ -106,11 +106,11 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func nearRowUpdate(currentIndexPath indexPath: IndexPath) -> Bool {
-        return indexPath.row == recipes.count - 1
+        return indexPath.row == recipes.count - Base.NUMBER_OF_ROWS_BEFORE_UPDATE
     }
     
     func nearSearchRowUpdate(currentIndexPath indexPath: IndexPath) -> Bool {
-        return indexPath.row == searchRecipes.count - 1
+        return indexPath.row == searchRecipes.count - Base.NUMBER_OF_ROWS_BEFORE_UPDATE
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -125,7 +125,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         else {
             cell.loadRecipePreview(recipe: searchRecipes[indexPath.row])
             if nearSearchRowUpdate(currentIndexPath: indexPath) {
-                recipeSearchRequest(query: "hamburgers for vegans")
+                recipeSearchRequest(query: searchController.searchBar.text!)
             }
         }
         
@@ -181,7 +181,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         searchRecipes = [Recipe]()
         pageNumberSearch = 0
         pageNumber = 0
-        recipeSearchRequest(query: "hamburgers for vegans")
+        recipeSearchRequest(query: searchBar.text!)
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {

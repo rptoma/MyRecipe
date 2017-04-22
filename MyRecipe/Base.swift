@@ -32,4 +32,10 @@ class Base {
             return "https://private-anon-c6e411992b-myrecipes1.apiary-mock.com/api/v1/recipes"
         }
     }
+    
+    static var NUMBER_OF_ROWS_BEFORE_UPDATE: Int! {
+        get {
+            return 5
+        }
+    }
 }
