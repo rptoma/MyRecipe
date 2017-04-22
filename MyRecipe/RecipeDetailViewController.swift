@@ -10,6 +10,7 @@ import UIKit
 
 class RecipeDetailViewController: UIViewController {
 
+    @IBOutlet weak var startButton: UIButton!
     
     var recipe: Recipe!
     let requestManager = RequestManager()
@@ -18,7 +19,7 @@ class RecipeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor.white
-        
+        startButton.layer.cornerRadius = 10
         recipeStepsRequest()
         
         
@@ -57,6 +58,7 @@ class RecipeDetailViewController: UIViewController {
     }
     */
 
+    
     func recipeStepsRequest(){
         
         requestManager.requestRecipeSteps(forRecipe: recipe.uid!) { (result, error) in
@@ -70,5 +72,8 @@ class RecipeDetailViewController: UIViewController {
         }
         
     }
-
+    
+    
+    
+    
 }

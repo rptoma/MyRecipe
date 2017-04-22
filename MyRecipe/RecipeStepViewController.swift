@@ -2,11 +2,12 @@
 //  RecipeStepViewController.swift
 //  MyRecipe
 //
-//  Created by Eduard Radu on 22/04/2017.
+//  Created by Alexandru Radu on 22/04/2017.
 //  Copyright © 2017 Toma Radu-Petrescu. All rights reserved.
 //
 
 import UIKit
+import AVFoundation
 
 class RecipeStepViewController: UIViewController {
     
@@ -14,20 +15,24 @@ class RecipeStepViewController: UIViewController {
     @IBOutlet weak var taskDescriptionView: UITextView!
     @IBOutlet weak var nextButtonOutlet: UIButton!
     
+    let speechSynthesizer = AVSpeechSynthesizer()
+    
     var taskCounter:Int = 0
     
     var recipeSteps:[RecipeStep] = [RecipeStep]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextButtonOutlet.layer.cornerRadius = 10
         
-        updateForTask()
+        updateTask()
         
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
-        updateForTask()
+        updateTask()
     }
+    
     
     
     override func didReceiveMemoryWarning() {
@@ -35,15 +40,22 @@ class RecipeStepViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        readTaskDescription(enable: false)
+        
+    }
     
-    
-    func updateForTask(){
+    func updateTask(){
         if taskCounter < recipeSteps.count {
+            
+            readTaskDescription(enable: false)
             if taskCounter == recipeSteps.count - 1 {
                 nextButtonOutlet.setTitle("Finish", for: UIControlState.normal)
             }
             taskLabel.text = recipeSteps[taskCounter].task
             taskDescriptionView.text = recipeSteps[taskCounter].description
+            readTaskDescription(enable: true)
             taskCounter += 1
             
         }
@@ -58,6 +70,18 @@ class RecipeStepViewController: UIViewController {
             self.backToDetailView()
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func readTaskDescription(enable:Bool){
+        let speechUtterance = AVSpeechUtterance(string: taskDescriptionView.text)
+        speechUtterance.pitchMultiplier = 0.25
+        
+        if enable == true{
+            speechSynthesizer.speak(speechUtterance)
+        }
+        else {
+            speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+        }
     }
     
     func backToDetailView(){
