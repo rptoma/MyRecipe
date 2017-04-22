@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IZA-Mi-Uu7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IZA-Mi-Uu7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -90,6 +90,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="MyRecipe" id="lRy-ME-PVK">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="7qs-w4-C9F"/>
                         <barButtonItem key="rightBarButtonItem" title="♥" id="hLq-3f-2bu">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -116,7 +117,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <segue destination="pp8-30-yBi" kind="show" id="DI4-zN-FcX"/>
+                                    <segue destination="pp8-30-yBi" kind="show" identifier="Start and Show Step" id="DI4-zN-FcX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -127,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="1932" y="39.130434782608695"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Step View Controller-->
         <scene sceneID="yc3-h5-PBW">
             <objects>
-                <viewController id="pp8-30-yBi" sceneMemberID="viewController">
+                <viewController id="pp8-30-yBi" customClass="RecipeStepViewController" customModule="MyRecipe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eRr-Xp-Eue"/>
                         <viewControllerLayoutGuide type="bottom" id="JCy-Al-emj"/>
@@ -138,12 +139,52 @@
                     <view key="view" contentMode="scaleToFill" id="6wv-Fj-Uaq">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Opy-Rk-idx">
+                                <rect key="frame" x="16" y="20" width="343" height="486"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcG-sE-2xL">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KwZ-ax-Scw">
+                                        <rect key="frame" x="0.0" y="45" width="343" height="441"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUC-Eh-Riq">
+                                <rect key="frame" x="164" y="553" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="pp8-30-yBi" eventType="touchUpInside" id="9e5-18-pby"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JCy-Al-emj" firstAttribute="top" secondItem="Opy-Rk-idx" secondAttribute="bottom" constant="97" id="Bkg-7o-LUx"/>
+                            <constraint firstItem="Opy-Rk-idx" firstAttribute="leading" secondItem="6wv-Fj-Uaq" secondAttribute="leadingMargin" id="RIR-sA-Lac"/>
+                            <constraint firstItem="Opy-Rk-idx" firstAttribute="trailing" secondItem="6wv-Fj-Uaq" secondAttribute="trailingMargin" id="V9i-dR-qxL"/>
+                            <constraint firstItem="Opy-Rk-idx" firstAttribute="top" secondItem="6wv-Fj-Uaq" secondAttribute="top" constant="20" symbolic="YES" id="dTE-1a-0hV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nextButtonOutlet" destination="HUC-Eh-Riq" id="ZvZ-Oc-hPT"/>
+                        <outlet property="taskDescriptionView" destination="KwZ-ax-Scw" id="vJ3-cx-EUq"/>
+                        <outlet property="taskLabel" destination="EcG-sE-2xL" id="2Gw-p1-My0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8m-Q3-qBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2881" y="39"/>
+            <point key="canvasLocation" x="2880.8000000000002" y="38.23088455772114"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="12u-bJ-KSq">

@@ -10,12 +10,11 @@ import UIKit
 
 class RecipeDetailViewController: UIViewController {
 
+    
     var recipe: Recipe!
-
     let requestManager = RequestManager()
-    
     var recipeSteps = [RecipeStep]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor.white
@@ -30,6 +29,27 @@ class RecipeDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func startButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: "Start and Show Step", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "Start and Show Step":
+                    if let vc = segue.destination as? RecipeStepViewController {
+                        //print(indexPath.row)
+                        vc.recipeSteps = self.recipeSteps
+                    }
+                
+            default:
+                break
+            }
+        }
+    }
+    
+    
 
     /*
     // MARK: - Navigation
