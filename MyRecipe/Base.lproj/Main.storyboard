@@ -214,7 +214,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IZA-Mi-Uu7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="bCA-AJ-cKU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="bCA-AJ-cKU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>

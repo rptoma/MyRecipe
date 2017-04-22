@@ -73,8 +73,7 @@ class RecipeStepViewController: UIViewController {
     }
     
     func readTaskDescription(enable:Bool){
-        let speechUtterance = AVSpeechUtterance(string: taskDescriptionView.text)
-        speechUtterance.pitchMultiplier = 0.25
+        let speechUtterance = AVSpeechUtterance(string: taskDescriptionView.text)b
         
         if enable == true{
             speechSynthesizer.speak(speechUtterance)
