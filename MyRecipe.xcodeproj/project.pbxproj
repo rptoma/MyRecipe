@@ -458,7 +458,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alex.MyRecipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/eduardradu/Documents/MyRecipe/MyRecipe/OpenEarsHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = ./MyRecipe/OpenEarsHeader.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -477,7 +477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alex.MyRecipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/eduardradu/Documents/MyRecipe/MyRecipe/OpenEarsHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = ./MyRecipe/OpenEarsHeader.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
