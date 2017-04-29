@@ -65,7 +65,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         searchController.searchBar.delegate = self
         
         searchController.dimsBackgroundDuringPresentation = false
-        //searchController.hidesNavigationBarDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = "Search for a recipe"
 
         searchController.searchBar.barTintColor = navigationController?.navigationBar.barTintColor
