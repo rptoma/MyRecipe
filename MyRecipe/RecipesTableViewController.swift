@@ -71,8 +71,8 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         searchController.searchBar.barTintColor = navigationController?.navigationBar.barTintColor
         searchController.searchBar.tintColor = UIColor.white
         searchController.searchBar.isTranslucent = false
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        searchController.searchBar.backgroundColor = UIColor.black
         
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
