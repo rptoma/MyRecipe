@@ -11,6 +11,11 @@ import UIKit
 class RecipeDetailViewController: UIViewController {
 
     @IBOutlet weak var startButton: UIButton!
+    @IBAction func favoriteAction(_ sender: Any) {
+        if let uid = recipe?.uid {
+          //  coreDataManager.addFavorite(uid: uid)
+        }
+    }
     
     var recipe: Recipe!
     let requestManager = RequestManager()
@@ -19,7 +24,7 @@ class RecipeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor.white
-        startButton.layer.cornerRadius = 10
+        customizeStartButton()
         recipeStepsRequest()
         
         
@@ -58,6 +63,13 @@ class RecipeDetailViewController: UIViewController {
     }
     */
 
+    func customizeStartButton(){
+        let attributedString = NSMutableAttributedString(string:"Start cooking")
+        attributedString.addAttribute(NSKernAttributeName, value: CGFloat(-10.0), range: NSRange(location:0, length:attributedString.length))
+        self.startButton.setAttributedTitle(attributedString, for: UIControlState.disabled)
+        
+        self.startButton.layer.cornerRadius = 10
+    }
     
     func recipeStepsRequest(){
         

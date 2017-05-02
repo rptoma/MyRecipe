@@ -118,7 +118,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="CUs-Qm-h81"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                                 <state key="normal" title="Start cooking">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -126,11 +126,24 @@
                                     <segue destination="pp8-30-yBi" kind="show" identifier="Start and Show Step" id="DI4-zN-FcX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFE-Al-iLY">
+                                <rect key="frame" x="321" y="8" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="28S-7a-Dqs"/>
+                                </constraints>
+                                <state key="normal" image="Like Filled-50"/>
+                                <connections>
+                                    <action selector="favoriteAction:" destination="wr8-2Q-7Na" eventType="touchUpInside" id="fOO-dd-dlL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xFE-Al-iLY" firstAttribute="trailing" secondItem="ULn-rh-lf1" secondAttribute="trailingMargin" id="3rF-jc-GVa"/>
+                            <constraint firstItem="FXU-bb-GvC" firstAttribute="top" secondItem="xFE-Al-iLY" secondAttribute="bottom" constant="557" id="8bw-Zs-dUY"/>
                             <constraint firstAttribute="bottom" secondItem="kbL-gD-g0o" secondAttribute="bottom" constant="20" symbolic="YES" id="E72-A8-6xj"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="top" secondItem="t2N-F0-ba0" secondAttribute="bottom" constant="539" id="IOL-uJ-cKU"/>
+                            <constraint firstItem="xFE-Al-iLY" firstAttribute="top" secondItem="t2N-F0-ba0" secondAttribute="bottom" constant="8" symbolic="YES" id="gZN-nY-sUp"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="centerX" secondItem="ULn-rh-lf1" secondAttribute="centerX" id="wjZ-mb-LeL"/>
                         </constraints>
                     </view>
@@ -175,11 +188,11 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUC-Eh-Riq">
                                 <rect key="frame" x="126" y="539" width="122" height="44"/>
-                                <color key="backgroundColor" red="0.72156862745098038" green="0.24741970002651215" blue="0.21722738444805145" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.72156862745098038" green="0.24705882352941178" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="b9H-sw-tdX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -214,7 +227,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IZA-Mi-Uu7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="bCA-AJ-cKU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="bCA-AJ-cKU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.80875653028488159" green="0.20478525757789612" blue="0.19042211771011353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -232,4 +245,7 @@
             <point key="canvasLocation" x="295.19999999999999" y="40.929535232383813"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Like Filled-50" width="50" height="50"/>
+    </resources>
 </document>
