@@ -82,11 +82,14 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
     func pocketsphinxDidReceiveHypothesis(_ hypothesis: String!, recognitionScore: String!, utteranceID: String!) { // Something was heard
         print("Local callback: The received hypothesis is \(hypothesis!) with a score of \(recognitionScore!) and an ID of \(utteranceID!)" + "Asta-i tinta!")
         
+        if Swift.abs(Int(recognitionScore)!) < 70000 {
+            nextButtonAction((Any).self)
+        }
     }
     
     func createVoiceRecognition(){
         let lmGenerator = OELanguageModelGenerator()
-        let words = ["next", "next step", "next task", "task"] // These can be lowercase, uppercase, or mixed-case.
+        let words = ["next"] // These can be lowercase, uppercase, or mixed-case.
         let name = "NameIWantForMyLanguageModelFiles"
         let err: Error! = lmGenerator.generateLanguageModel(from: words, withFilesNamed: name, forAcousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelEnglish"))
         
@@ -101,13 +104,15 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
     }
     
     func enableVoiceRecognition(path1:String, path2:String){
-        // OELogging.startOpenEarsLogging() //Uncomment to receive full OpenEars logging in case of any unexpected results.
+         OELogging.startOpenEarsLogging() //Uncomment to receive full OpenEars logging in case of any unexpected results.
         do {
             try OEPocketsphinxController.sharedInstance().setActive(true) // Setting the shared OEPocketsphinxController active is necessary before any of its properties are accessed.
         } catch {
             print("Error: it wasn't possible to set the shared instance to active: \"\(error)\"")
         }
         
+        OEPocketsphinxController.sharedInstance().vadThreshold = 4.0
+//        OEPocketsphinxController.sharedInstance().secondsOfSilenceToDetect = 0.5
         OEPocketsphinxController.sharedInstance().startListeningWithLanguageModel(atPath: path1, dictionaryAtPath: path2, acousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelEnglish"), languageModelIsJSGF: false)
     }
     
