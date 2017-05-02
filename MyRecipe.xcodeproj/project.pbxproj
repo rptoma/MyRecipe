@@ -301,6 +301,7 @@
 				E2DAAAE31EA7A49E00A279F5 /* RecipeDetailViewController.swift in Sources */,
 				E29A795E1EA54AE10075E29C /* RequestManager.swift in Sources */,
 				E29A795C1EA54AE10075E29C /* RecipesTableViewController.swift in Sources */,
+				E22D1DE31EB90F85009FFF6B /* RecipeDescription.swift in Sources */,
 				E29A79431EA549C80075E29C /* AppDelegate.swift in Sources */,
 				E29A79691EA556550075E29C /* Base.swift in Sources */,
 				E2D0EF0C1EB8F6BE00DDD549 /* CoreDataManager.swift in Sources */,

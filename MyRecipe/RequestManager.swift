@@ -106,5 +106,43 @@ class RequestManager {
             completionHandler(result, error)
         }
     }
+    
+    public func requestRecipeDesctiption(forUID uid: String, completionHandler: @escaping (_ result: RecipeDescription?, _ error: String?) ->()) {
+        
+        let requestURL = Base.RECIPES_DESCRIPTION_BASE_URL + uid
+        
+        Alamofire.request(requestURL).validate().responseJSON { response in
+            
+            var result: RecipeDescription?
+            var error: String?
+            
+            switch response.result {
+                
+            case .success(let data):
+                let responseJson = data as? [String: AnyObject]
+                
+                if let responseJson = responseJson {
+                    result = RecipeDescription(fromJson: responseJson)
+                }
+                
+            case .failure(let errorAlamo):
+                var message : String!
+                if let httpStatusCode = response.response?.statusCode {
+                    switch(httpStatusCode) {
+                    case 404:
+                        message = "404 error"
+                    default:
+                        message = errorAlamo.localizedDescription
+                    }
+                } else {
+                    message = errorAlamo.localizedDescription
+                }
+                error = message
+            }
+            
+            completionHandler(result, error)
+        }
+    }
+
 
 }
