@@ -111,7 +111,6 @@ class RequestManager {
         
         let requestURL = Base.RECIPES_DESCRIPTION_BASE_URL + uid
         
-        print(requestURL)
         Alamofire.request(requestURL).validate().responseJSON { response in
             
             var result: RecipeDescription?
