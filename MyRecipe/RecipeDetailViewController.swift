@@ -15,6 +15,15 @@ class RecipeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor.white
+        RequestManager().requestRecipeDesctiption(forUID: "12345") { (result, error) in
+            if error == nil {
+                print(result?.description)
+            }
+            else {
+                print("eroare")
+                print(error)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
