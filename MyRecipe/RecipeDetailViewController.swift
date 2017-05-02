@@ -10,6 +10,7 @@ import UIKit
 
 class RecipeDetailViewController: UIViewController {
 
+    let coreDataManager = CoreDataManager()
     var recipe: Recipe?
     
     override func viewDidLoad() {
@@ -17,6 +18,12 @@ class RecipeDetailViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.white
     }
 
+    @IBAction func favoriteRecipe(_ sender: UIButton) {
+        if let uid = recipe?.uid {
+            coreDataManager.addFavorite(uid: uid)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
