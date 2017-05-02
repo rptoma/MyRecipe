@@ -60,7 +60,6 @@ class RequestManager {
         }
     }
     
-    //query request
     public func requestRecipes(forQuery query: String, forPage page: Int, completionHandler: @escaping (_ result: [Recipe]?, _ error: String?) ->()) {
         
         let parameters: Parameters = [
