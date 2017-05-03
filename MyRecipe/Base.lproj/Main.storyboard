@@ -111,14 +111,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="8e6-nM-rdA">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="8e6-nM-rdA" customClass="FavoriteTableViewCell" customModule="MyRecipe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8e6-nM-rdA" id="Qer-wD-ws6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b29-jE-Y2h">
+                                            <rect key="frame" x="8" y="8" width="359" height="28"/>
+                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-Xv-uXh">
+                                            <rect key="frame" x="177" y="12" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ndi-Xv-uXh" firstAttribute="centerY" secondItem="Qer-wD-ws6" secondAttribute="centerY" id="1K8-Q8-T4Y"/>
+                                        <constraint firstItem="b29-jE-Y2h" firstAttribute="trailing" secondItem="Qer-wD-ws6" secondAttribute="trailingMargin" id="6oz-TA-ahk"/>
+                                        <constraint firstItem="b29-jE-Y2h" firstAttribute="leading" secondItem="Qer-wD-ws6" secondAttribute="leadingMargin" id="7EZ-jY-YD4"/>
+                                        <constraint firstItem="b29-jE-Y2h" firstAttribute="centerX" secondItem="ndi-Xv-uXh" secondAttribute="centerX" id="Ayj-B1-k0t"/>
+                                        <constraint firstItem="b29-jE-Y2h" firstAttribute="top" secondItem="Qer-wD-ws6" secondAttribute="topMargin" id="T0F-nQ-EUP"/>
+                                        <constraint firstItem="b29-jE-Y2h" firstAttribute="centerY" secondItem="ndi-Xv-uXh" secondAttribute="centerY" id="cUF-tx-1k7"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="indicatorView" destination="ndi-Xv-uXh" id="wRZ-l2-HiN"/>
+                                    <outlet property="nameLabel" destination="b29-jE-Y2h" id="Vhg-Ce-fYD"/>
                                     <segue destination="pp8-30-yBi" kind="show" id="f0Q-ok-rMg"/>
                                 </connections>
                             </tableViewCell>
@@ -131,7 +152,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9b-sA-hbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2081" y="432"/>
+            <point key="canvasLocation" x="2080.8000000000002" y="431.33433283358323"/>
         </scene>
         <!--Recipe Detail View Controller-->
         <scene sceneID="89W-fT-AiO">

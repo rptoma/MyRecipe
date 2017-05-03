@@ -11,6 +11,7 @@
 		E22D1DE11EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D1DE01EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift */; };
 		E22D1DE71EB932AB009FFF6B /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D1DE61EB932AB009FFF6B /* Ingredient.swift */; };
 		E22D1DE91EB932B3009FFF6B /* RecipeDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D1DE81EB932B3009FFF6B /* RecipeDescription.swift */; };
+		E24DCDF51EBA370C0090D4BC /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DCDF41EBA370C0090D4BC /* FavoriteTableViewCell.swift */; };
 		E29A79431EA549C80075E29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79421EA549C80075E29C /* AppDelegate.swift */; };
 		E29A79481EA549C80075E29C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29A79461EA549C80075E29C /* Main.storyboard */; };
 		E29A794A1EA549C80075E29C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E29A79491EA549C80075E29C /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		E22D1DE01EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableTableViewController.swift; sourceTree = "<group>"; };
 		E22D1DE61EB932AB009FFF6B /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		E22D1DE81EB932B3009FFF6B /* RecipeDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDescription.swift; sourceTree = "<group>"; };
+		E24DCDF41EBA370C0090D4BC /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		E29A793F1EA549C80075E29C /* MyRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29A79421EA549C80075E29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E29A79471EA549C80075E29C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				E29A79571EA54AE10075E29C /* RecipeTableViewCell.swift */,
+				E24DCDF41EBA370C0090D4BC /* FavoriteTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				E2D0EF0A1EB8F36E00DDD549 /* CoreData.xcdatamodeld in Sources */,
 				E2DAAAE31EA7A49E00A279F5 /* RecipeDetailViewController.swift in Sources */,
 				E29A795E1EA54AE10075E29C /* RequestManager.swift in Sources */,
+				E24DCDF51EBA370C0090D4BC /* FavoriteTableViewCell.swift in Sources */,
 				E29A795C1EA54AE10075E29C /* RecipesTableViewController.swift in Sources */,
 				E29A79431EA549C80075E29C /* AppDelegate.swift in Sources */,
 				E22D1DE91EB932B3009FFF6B /* RecipeDescription.swift in Sources */,

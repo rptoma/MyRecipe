@@ -12,38 +12,19 @@ class FavoritesTableTableViewController: UITableViewController {
 
     let coreDataManager = CoreDataManager()
     let requestManager = RequestManager()
-    var recipes = [Recipe]()
+    var favorites = [Favorite]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var favorites = [Favorite]()
         navigationController?.navigationBar.tintColor = UIColor.white
         coreDataManager.fetchFavorites { (result, error) in
             if let error = error {
                 print(error)
             }
             else {
-                if let result = result {
-                    favorites = result
-                }
+                favorites = result!
             }
         }
-        
-        for favorite in favorites {
-            requestManager.requestRecipePreview(forUID: favorite.uid!, completionHandler: { (result, error) in
-                if error == nil {
-                    if let result = result {
-                        self.recipes.append(result)
-                         self.tableView.reloadData()
-                    }
-                }
-                else {
-                    print(error ?? "unknown error")
-                }
-            })
-        }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,13 +41,25 @@ class FavoritesTableTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return recipes.count
+        return favorites.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FavoriteTableViewCell
         
-        cell.textLabel?.text = recipes[indexPath.row].name
+        requestManager.requestRecipePreview(forUID: favorites[indexPath.row].uid!) { (result, error) in
+            if error == nil {
+                if let result = result {
+                    cell.indicatorView.stopAnimating()
+                    cell.nameLabel.text = result.name
+                }
+            }
+            else {
+                print(error ?? "unknown error")
+            }
+        }
+        
         return cell
     }
+
 }
