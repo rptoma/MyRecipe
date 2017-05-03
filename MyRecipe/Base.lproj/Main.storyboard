@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="1234.4000000000001" y="40.929535232383813"/>
         </scene>
-        <!--Favorites Table Table View Controller-->
+        <!--Favorites-->
         <scene sceneID="8hE-1D-KRL">
             <objects>
-                <tableViewController id="4q8-xo-cvu" customClass="FavoritesTableTableViewController" customModule="MyRecipe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Favorites" id="4q8-xo-cvu" customClass="FavoritesTableTableViewController" customModule="MyRecipe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xgX-Us-vQp">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,7 +115,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8e6-nM-rdA" id="Qer-wD-ws6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b29-jE-Y2h">
