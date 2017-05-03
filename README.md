@@ -1,5 +1,5 @@
 # MyRecipe
-MyRecipe iOS app
+MyRecipe **iOS** app
 
 **Frameworks** used:
 - Alamofire
