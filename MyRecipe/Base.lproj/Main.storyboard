@@ -80,7 +80,7 @@
                                     <outlet property="difficultyLabel" destination="5FU-if-SkA" id="BEl-ve-coN"/>
                                     <outlet property="durationLabel" destination="Hoh-Wd-nQ5" id="Ql5-I1-pK2"/>
                                     <outlet property="nameLabel" destination="fCu-pD-1WL" id="6wb-46-3Qm"/>
-                                    <segue destination="wr8-2Q-7Na" kind="show" identifier="Show Recipe Steps" id="Ma2-HJ-Qgc"/>
+                                    <segue destination="wr8-2Q-7Na" kind="show" identifier="Show Recipe Detail" id="Ma2-HJ-Qgc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -140,7 +140,7 @@
                                 <connections>
                                     <outlet property="indicatorView" destination="ndi-Xv-uXh" id="wRZ-l2-HiN"/>
                                     <outlet property="nameLabel" destination="b29-jE-Y2h" id="Vhg-Ce-fYD"/>
-                                    <segue destination="pp8-30-yBi" kind="show" id="f0Q-ok-rMg"/>
+                                    <segue destination="wr8-2Q-7Na" kind="show" identifier="Show Recipe Detail" id="e46-kg-tub"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -152,7 +152,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9b-sA-hbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2080.8000000000002" y="431.33433283358323"/>
+            <point key="canvasLocation" x="2111" y="-358"/>
         </scene>
         <!--Recipe Detail View Controller-->
         <scene sceneID="89W-fT-AiO">
@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYc-cj-rij" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2081" y="-296"/>
+            <point key="canvasLocation" x="2994" y="41"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="yc3-h5-PBW">
@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8m-Q3-qBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2894" y="41"/>
+            <point key="canvasLocation" x="3820" y="41"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="12u-bJ-KSq">
@@ -236,6 +236,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="f0Q-ok-rMg"/>
+        <segue reference="Ma2-HJ-Qgc"/>
     </inferredMetricsTieBreakers>
 </document>

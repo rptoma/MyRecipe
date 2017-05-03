@@ -149,7 +149,6 @@ class RequestManager {
         
         Alamofire.request(requestURL).validate().responseJSON { response in
             
-            print(requestURL)
             var result: Recipe?
             var error: String?
             

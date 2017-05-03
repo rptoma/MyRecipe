@@ -12,6 +12,7 @@ class FavoriteTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    var recipe: Recipe?
     
     override func awakeFromNib() {
         super.awakeFromNib()

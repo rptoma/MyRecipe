@@ -86,7 +86,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
-                case "Show Recipe Steps":
+                case "Show Recipe Detail":
                 if let indexPath = tableView.indexPath(for: sender as! RecipeTableViewCell) {
                     print(indexPath.row)
                     if let vc = segue.destination as? RecipeDetailViewController {

@@ -52,6 +52,7 @@ class FavoritesTableTableViewController: UITableViewController {
                 if let result = result {
                     cell.indicatorView.stopAnimating()
                     cell.nameLabel.text = result.name
+                    cell.recipe = result
                 }
             }
             else {
@@ -61,5 +62,23 @@ class FavoritesTableTableViewController: UITableViewController {
         
         return cell
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "Show Recipe Detail":
+                if let indexPath = tableView.indexPath(for: sender as! FavoriteTableViewCell) {
+                    print(indexPath.row)
+                    if let vc = segue.destination as? RecipeDetailViewController {
+                        print(indexPath.row)
+                        if let sender = sender as? FavoriteTableViewCell {
+                            vc.recipe = sender.recipe
+                        }
+                    }
+                }
+            default:
+                break
+            }
+        }
+    }
 }
