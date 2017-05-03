@@ -80,7 +80,7 @@
                                     <outlet property="difficultyLabel" destination="5FU-if-SkA" id="BEl-ve-coN"/>
                                     <outlet property="durationLabel" destination="Hoh-Wd-nQ5" id="Ql5-I1-pK2"/>
                                     <outlet property="nameLabel" destination="fCu-pD-1WL" id="6wb-46-3Qm"/>
-                                    <segue destination="wr8-2Q-7Na" kind="show" identifier="Show Recipe Steps" id="Ma2-HJ-Qgc"/>
+                                    <segue destination="wr8-2Q-7Na" kind="show" identifier="Show Recipe Detail" id="Ma2-HJ-Qgc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -93,12 +93,67 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="7qs-w4-C9F"/>
                         <barButtonItem key="rightBarButtonItem" title="♥" id="hLq-3f-2bu">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="4q8-xo-cvu" kind="show" id="zqa-rp-kBO"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwa-Jq-ruK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1234.4000000000001" y="40.929535232383813"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="8hE-1D-KRL">
+            <objects>
+                <tableViewController title="Favorites" id="4q8-xo-cvu" customClass="FavoritesTableTableViewController" customModule="MyRecipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xgX-Us-vQp">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="8e6-nM-rdA" customClass="FavoriteTableViewCell" customModule="MyRecipe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8e6-nM-rdA" id="Qer-wD-ws6">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b29-jE-Y2h">
+                                            <rect key="frame" x="8" y="8" width="359" height="28"/>
+                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-Xv-uXh">
+                                            <rect key="frame" x="177" y="12" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ndi-Xv-uXh" firstAttribute="centerY" secondItem="Qer-wD-ws6" secondAttribute="centerY" id="1K8-Q8-T4Y"/>
+                                        <constraint firstItem="b29-jE-Y2h" firstAttribute="trailing" secondItem="Qer-wD-ws6" secondAttribute="trailingMargin" id="6oz-TA-ahk"/>
+                                        <constraint firstItem="b29-jE-Y2h" firstAttribute="leading" secondItem="Qer-wD-ws6" secondAttribute="leadingMargin" id="7EZ-jY-YD4"/>
+                                        <constraint firstItem="b29-jE-Y2h" firstAttribute="centerX" secondItem="ndi-Xv-uXh" secondAttribute="centerX" id="Ayj-B1-k0t"/>
+                                        <constraint firstItem="b29-jE-Y2h" firstAttribute="top" secondItem="Qer-wD-ws6" secondAttribute="topMargin" id="T0F-nQ-EUP"/>
+                                        <constraint firstItem="b29-jE-Y2h" firstAttribute="centerY" secondItem="ndi-Xv-uXh" secondAttribute="centerY" id="cUF-tx-1k7"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="indicatorView" destination="ndi-Xv-uXh" id="wRZ-l2-HiN"/>
+                                    <outlet property="nameLabel" destination="b29-jE-Y2h" id="Vhg-Ce-fYD"/>
+                                    <segue destination="wr8-2Q-7Na" kind="show" identifier="Show Recipe Detail" id="e46-kg-tub"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4q8-xo-cvu" id="UZS-mJ-tK8"/>
+                            <outlet property="delegate" destination="4q8-xo-cvu" id="gIi-Be-LMV"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T9b-sA-hbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2111" y="-358"/>
         </scene>
         <!--Recipe Detail View Controller-->
         <scene sceneID="89W-fT-AiO">
@@ -136,6 +191,13 @@
                                     <action selector="favoriteAction:" destination="wr8-2Q-7Na" eventType="touchUpInside" id="fOO-dd-dlL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7w-JT-bta">
+                                <rect key="frame" x="16" y="20" width="55" height="30"/>
+                                <state key="normal" title="Favorite"/>
+                                <connections>
+                                    <action selector="favoriteRecipe:" destination="wr8-2Q-7Na" eventType="touchUpInside" id="0DY-QV-Thd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -153,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYc-cj-rij" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="39.130434782608695"/>
+            <point key="canvasLocation" x="2994" y="41"/>
         </scene>
         <!--Recipe Step View Controller-->
         <scene sceneID="yc3-h5-PBW">
@@ -230,7 +292,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="bCA-AJ-cKU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.80875653028488159" green="0.20478525757789612" blue="0.19042211771011353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.80784313725490198" green="0.20392156862745098" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textAttributes>

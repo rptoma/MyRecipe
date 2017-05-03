@@ -30,6 +30,12 @@ class RecipeDetailViewController: UIViewController {
         
     }
 
+    @IBAction func favoriteRecipe(_ sender: UIButton) {
+        if let uid = recipe?.uid {
+            coreDataManager.addFavorite(uid: uid)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
