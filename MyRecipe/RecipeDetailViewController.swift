@@ -11,11 +11,6 @@ import UIKit
 class RecipeDetailViewController: UIViewController {
 
     @IBOutlet weak var startButton: UIButton!
-    @IBAction func favoriteAction(_ sender: Any) {
-        if let uid = recipe?.uid {
-          //  coreDataManager.addFavorite(uid: uid)
-        }
-    }
     
     var recipe: Recipe!
     let requestManager = RequestManager()

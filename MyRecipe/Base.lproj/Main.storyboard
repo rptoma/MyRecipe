@@ -116,7 +116,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8e6-nM-rdA" id="Qer-wD-ws6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b29-jE-Y2h">
@@ -181,18 +181,9 @@
                                     <segue destination="pp8-30-yBi" kind="show" identifier="Start and Show Step" id="DI4-zN-FcX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFE-Al-iLY">
-                                <rect key="frame" x="321" y="8" width="38" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="38" id="28S-7a-Dqs"/>
-                                </constraints>
-                                <state key="normal" image="Like Filled-50"/>
-                                <connections>
-                                    <action selector="favoriteAction:" destination="wr8-2Q-7Na" eventType="touchUpInside" id="fOO-dd-dlL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7w-JT-bta">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7w-JT-bta">
                                 <rect key="frame" x="16" y="20" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Favorite"/>
                                 <connections>
                                     <action selector="favoriteRecipe:" destination="wr8-2Q-7Na" eventType="touchUpInside" id="0DY-QV-Thd"/>
@@ -201,11 +192,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xFE-Al-iLY" firstAttribute="trailing" secondItem="ULn-rh-lf1" secondAttribute="trailingMargin" id="3rF-jc-GVa"/>
-                            <constraint firstItem="FXU-bb-GvC" firstAttribute="top" secondItem="xFE-Al-iLY" secondAttribute="bottom" constant="557" id="8bw-Zs-dUY"/>
                             <constraint firstAttribute="bottom" secondItem="kbL-gD-g0o" secondAttribute="bottom" constant="20" symbolic="YES" id="E72-A8-6xj"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="top" secondItem="t2N-F0-ba0" secondAttribute="bottom" constant="539" id="IOL-uJ-cKU"/>
-                            <constraint firstItem="xFE-Al-iLY" firstAttribute="top" secondItem="t2N-F0-ba0" secondAttribute="bottom" constant="8" symbolic="YES" id="gZN-nY-sUp"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="centerX" secondItem="ULn-rh-lf1" secondAttribute="centerX" id="wjZ-mb-LeL"/>
                         </constraints>
                     </view>
@@ -307,7 +295,7 @@
             <point key="canvasLocation" x="295.19999999999999" y="40.929535232383813"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Like Filled-50" width="50" height="50"/>
-    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="e46-kg-tub"/>
+    </inferredMetricsTieBreakers>
 </document>
