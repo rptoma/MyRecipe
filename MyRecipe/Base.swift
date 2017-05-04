@@ -39,6 +39,7 @@ class Base {
         }
     }
     
+    
     static var NUMBER_OF_ROWS_BEFORE_UPDATE: Int! {
         get {
             return 5
