@@ -32,6 +32,9 @@
 		E69262DD1EADF5C500AF7431 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E69262DC1EADF5C500AF7431 /* AcousticModelEnglish.bundle */; };
 		E6B10EEF1EAAA6520010F974 /* RecipeStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B10EEE1EAAA6520010F974 /* RecipeStep.swift */; };
 		E6DF23A81EAB6CAD00164CFC /* RecipeStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF23A71EAB6CAD00164CFC /* RecipeStepViewController.swift */; };
+		E6F7475F1EBA7B0F00984A1F /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6F747591EBA796600984A1F /* CoreData.xcdatamodeld */; };
+		E6F747611EBA7BCA00984A1F /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F747601EBA7BCA00984A1F /* Ingredient.swift */; };
+		E6F747631EBA7BEA00984A1F /* RecipeDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F747621EBA7BEA00984A1F /* RecipeDescription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,10 @@
 		E69262DC1EADF5C500AF7431 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		E6B10EEE1EAAA6520010F974 /* RecipeStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeStep.swift; sourceTree = "<group>"; };
 		E6DF23A71EAB6CAD00164CFC /* RecipeStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeStepViewController.swift; sourceTree = "<group>"; };
+		E6F7475A1EBA796600984A1F /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		E6F7475C1EBA797200984A1F /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E6F747601EBA7BCA00984A1F /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		E6F747621EBA7BEA00984A1F /* RecipeDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDescription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +160,9 @@
 		E29A79611EA54B020075E29C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E6F747621EBA7BEA00984A1F /* RecipeDescription.swift */,
+				E6F747601EBA7BCA00984A1F /* Ingredient.swift */,
+				E6F747591EBA796600984A1F /* CoreData.xcdatamodeld */,
 				E29A79551EA54AE10075E29C /* Recipe.swift */,
 				E6B10EEE1EAAA6520010F974 /* RecipeStep.swift */,
 			);
@@ -182,6 +192,7 @@
 		E29A79641EA54B2A0075E29C /* Webservices */ = {
 			isa = PBXGroup;
 			children = (
+				E6F7475C1EBA797200984A1F /* CoreDataManager.swift */,
 				E29A79581EA54AE10075E29C /* RequestManager.swift */,
 				E2D0EF0B1EB8F6BE00DDD549 /* CoreDataManager.swift */,
 			);
@@ -331,9 +342,12 @@
 			files = (
 				E6DF23A81EAB6CAD00164CFC /* RecipeStepViewController.swift in Sources */,
 				E29A795B1EA54AE10075E29C /* Recipe.swift in Sources */,
+				E6F747611EBA7BCA00984A1F /* Ingredient.swift in Sources */,
 				E29A795D1EA54AE10075E29C /* RecipeTableViewCell.swift in Sources */,
 				E2D0EF0A1EB8F36E00DDD549 /* CoreData.xcdatamodeld in Sources */,
 				E2DAAAE31EA7A49E00A279F5 /* RecipeDetailViewController.swift in Sources */,
+				E6F7475F1EBA7B0F00984A1F /* CoreData.xcdatamodeld in Sources */,
+				E6F747631EBA7BEA00984A1F /* RecipeDescription.swift in Sources */,
 				E29A795E1EA54AE10075E29C /* RequestManager.swift in Sources */,
 				E24DCDF51EBA370C0090D4BC /* FavoriteTableViewCell.swift in Sources */,
 				E29A795C1EA54AE10075E29C /* RecipesTableViewController.swift in Sources */,
@@ -480,6 +494,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = alex.MyRecipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = ./MyRecipe/OpenEarsHeader.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -499,6 +514,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = alex.MyRecipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = ./MyRecipe/OpenEarsHeader.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -533,6 +549,16 @@
 				E2D0EF091EB8F36E00DDD549 /* CoreData.xcdatamodel */,
 			);
 			currentVersion = E2D0EF091EB8F36E00DDD549 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		E6F747591EBA796600984A1F /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E6F7475A1EBA796600984A1F /* CoreData.xcdatamodel */,
+			);
+			currentVersion = E6F7475A1EBA796600984A1F /* CoreData.xcdatamodel */;
 			path = CoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -27,7 +27,7 @@ class RecipeDetailViewController: UIViewController {
 
     @IBAction func favoriteRecipe(_ sender: UIButton) {
         if let uid = recipe?.uid {
-            coreDataManager.addFavorite(uid: uid)
+            CoreDataManager.addFavorite(uid: uid)
         }
     }
     
