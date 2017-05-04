@@ -21,9 +21,9 @@ class Base {
         }
     }
     
-    static var RECIPE_DESCRIPTION_BASE_URL: String! {
+    static var RECIPES_STEPS_LIST_BASE_URL: String! {
         get {
-            return "https://private-anon-c6e411992b-myrecipes1.apiary-mock.com/api/v1/recipes/"
+            return "https://private-anon-c6e411992b-myrecipes1.apiary-mock.com/api/v1/steps/"
         }
     }
     
@@ -38,6 +38,7 @@ class Base {
             return "https://private-anon-c6e411992b-myrecipes1.apiary-mock.com/api/v1/previews/"
         }
     }
+    
     
     static var NUMBER_OF_ROWS_BEFORE_UPDATE: Int! {
         get {
