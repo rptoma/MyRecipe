@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E6BBE781F81FC166E7D645D /* Pods_MyRecipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0C3901D6CF31EBEFD68E00B /* Pods_MyRecipe.framework */; };
-		E22D1DE11EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D1DE01EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift */; };
-		E22D1DE71EB932AB009FFF6B /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D1DE61EB932AB009FFF6B /* Ingredient.swift */; };
-		E22D1DE91EB932B3009FFF6B /* RecipeDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D1DE81EB932B3009FFF6B /* RecipeDescription.swift */; };
+		E21FA7531EC3AC2D003BC5D8 /* RaisedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21FA7521EC3AC2D003BC5D8 /* RaisedButton.swift */; };
 		E24DCDF51EBA370C0090D4BC /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DCDF41EBA370C0090D4BC /* FavoriteTableViewCell.swift */; };
 		E29A79431EA549C80075E29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79421EA549C80075E29C /* AppDelegate.swift */; };
 		E29A79481EA549C80075E29C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29A79461EA549C80075E29C /* Main.storyboard */; };
@@ -21,19 +19,30 @@
 		E29A795D1EA54AE10075E29C /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79571EA54AE10075E29C /* RecipeTableViewCell.swift */; };
 		E29A795E1EA54AE10075E29C /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79581EA54AE10075E29C /* RequestManager.swift */; };
 		E29A795F1EA54AE10075E29C /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79591EA54AE10075E29C /* TimeConverter.swift */; };
-		E29A79691EA556550075E29C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79681EA556550075E29C /* Base.swift */; };
-		E2D0EF0A1EB8F36E00DDD549 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2D0EF081EB8F36E00DDD549 /* CoreData.xcdatamodeld */; };
-		E2D0EF0C1EB8F6BE00DDD549 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0EF0B1EB8F6BE00DDD549 /* CoreDataManager.swift */; };
 		E2DAAAE31EA7A49E00A279F5 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DAAAE21EA7A49E00A279F5 /* RecipeDetailViewController.swift */; };
+		E6367BA21EC1920900A8D0F0 /* FavoritesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6367BA11EC1920900A8D0F0 /* FavoritesTableTableViewController.swift */; };
+		E640F3771EBB8727004D6837 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E640F3761EBB8727004D6837 /* Base.swift */; };
+		E640F3781EBB8997004D6837 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0EF0B1EB8F6BE00DDD549 /* CoreDataManager.swift */; };
+		E65B00231ECCB88A00EA308B /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B00221ECCB88A00EA308B /* AppUtility.swift */; };
+		E69262D31EADF18E00AF7431 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69262D21EADF18E00AF7431 /* AudioToolbox.framework */; };
+		E69262D51EADF19600AF7431 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69262D41EADF19600AF7431 /* AVFoundation.framework */; };
+		E69262D91EADF5A300AF7431 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69262D81EADF5A300AF7431 /* OpenEars.framework */; };
+		E69262DB1EADF5B800AF7431 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69262DA1EADF5B800AF7431 /* Slt.framework */; };
+		E69262DD1EADF5C500AF7431 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E69262DC1EADF5C500AF7431 /* AcousticModelEnglish.bundle */; };
+		E6B10EEF1EAAA6520010F974 /* RecipeStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B10EEE1EAAA6520010F974 /* RecipeStep.swift */; };
+		E6DF23A81EAB6CAD00164CFC /* RecipeStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF23A71EAB6CAD00164CFC /* RecipeStepViewController.swift */; };
+		E6F7475F1EBA7B0F00984A1F /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6F747591EBA796600984A1F /* CoreData.xcdatamodeld */; };
+		E6F747611EBA7BCA00984A1F /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F747601EBA7BCA00984A1F /* Ingredient.swift */; };
+		E6F747631EBA7BEA00984A1F /* RecipeDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F747621EBA7BEA00984A1F /* RecipeDescription.swift */; };
+		E6FEBDAA1ECB9F360039F4FE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FEBDA91ECB9F360039F4FE /* DetailView.swift */; };
+		E6FEBDAC1ECBA4AC0039F4FE /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FEBDAB1ECBA4AC0039F4FE /* StepView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		74152304F1EB30D9C4D8CC00 /* Pods-MyRecipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRecipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyRecipe/Pods-MyRecipe.release.xcconfig"; sourceTree = "<group>"; };
 		C0C3901D6CF31EBEFD68E00B /* Pods_MyRecipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyRecipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0FA1703C51F4091356D1C91 /* Pods-MyRecipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRecipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyRecipe/Pods-MyRecipe.debug.xcconfig"; sourceTree = "<group>"; };
-		E22D1DE01EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableTableViewController.swift; sourceTree = "<group>"; };
-		E22D1DE61EB932AB009FFF6B /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
-		E22D1DE81EB932B3009FFF6B /* RecipeDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDescription.swift; sourceTree = "<group>"; };
+		E21FA7521EC3AC2D003BC5D8 /* RaisedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaisedButton.swift; sourceTree = "<group>"; };
 		E24DCDF41EBA370C0090D4BC /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		E29A793F1EA549C80075E29C /* MyRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29A79421EA549C80075E29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,10 +55,24 @@
 		E29A79571EA54AE10075E29C /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		E29A79581EA54AE10075E29C /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		E29A79591EA54AE10075E29C /* TimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
-		E29A79681EA556550075E29C /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
-		E2D0EF091EB8F36E00DDD549 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		E2D0EF0B1EB8F6BE00DDD549 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E2DAAAE21EA7A49E00A279F5 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		E6367BA11EC1920900A8D0F0 /* FavoritesTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableTableViewController.swift; sourceTree = "<group>"; };
+		E640F3761EBB8727004D6837 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		E65B00221ECCB88A00EA308B /* AppUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
+		E69262D21EADF18E00AF7431 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E69262D41EADF19600AF7431 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E69262D71EADF1D200AF7431 /* OpenEarsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEarsHeader.h; sourceTree = "<group>"; };
+		E69262D81EADF5A300AF7431 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		E69262DA1EADF5B800AF7431 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		E69262DC1EADF5C500AF7431 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		E6B10EEE1EAAA6520010F974 /* RecipeStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeStep.swift; sourceTree = "<group>"; };
+		E6DF23A71EAB6CAD00164CFC /* RecipeStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeStepViewController.swift; sourceTree = "<group>"; };
+		E6F7475A1EBA796600984A1F /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		E6F747601EBA7BCA00984A1F /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		E6F747621EBA7BEA00984A1F /* RecipeDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDescription.swift; sourceTree = "<group>"; };
+		E6FEBDA91ECB9F360039F4FE /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		E6FEBDAB1ECBA4AC0039F4FE /* StepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +80,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69262DB1EADF5B800AF7431 /* Slt.framework in Frameworks */,
+				E69262D51EADF19600AF7431 /* AVFoundation.framework in Frameworks */,
+				E69262D31EADF18E00AF7431 /* AudioToolbox.framework in Frameworks */,
 				1E6BBE781F81FC166E7D645D /* Pods_MyRecipe.framework in Frameworks */,
+				E69262D91EADF5A300AF7431 /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +94,11 @@
 		12AB95BA47F3DA32A9BEA278 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E69262DC1EADF5C500AF7431 /* AcousticModelEnglish.bundle */,
+				E69262DA1EADF5B800AF7431 /* Slt.framework */,
+				E69262D81EADF5A300AF7431 /* OpenEars.framework */,
+				E69262D41EADF19600AF7431 /* AVFoundation.framework */,
+				E69262D21EADF18E00AF7431 /* AudioToolbox.framework */,
 				C0C3901D6CF31EBEFD68E00B /* Pods_MyRecipe.framework */,
 			);
 			name = Frameworks;
@@ -79,6 +111,14 @@
 				74152304F1EB30D9C4D8CC00 /* Pods-MyRecipe.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E21FA7541EC3AC3B003BC5D8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E21FA7521EC3AC2D003BC5D8 /* RaisedButton.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		E29A79361EA549C70075E29C = {
@@ -109,9 +149,12 @@
 				E29A79641EA54B2A0075E29C /* Webservices */,
 				E29A79651EA54B320075E29C /* Data converters */,
 				E29A796A1EA55C3F0075E29C /* Base */,
+				E21FA7541EC3AC3B003BC5D8 /* Extensions */,
 				E29A79491EA549C80075E29C /* Assets.xcassets */,
 				E29A79421EA549C80075E29C /* AppDelegate.swift */,
 				E29A794E1EA549C80075E29C /* Info.plist */,
+				E69262D71EADF1D200AF7431 /* OpenEarsHeader.h */,
+				E65B00241ECCB97700EA308B /* Utilities */,
 			);
 			path = MyRecipe;
 			sourceTree = "<group>";
@@ -121,6 +164,8 @@
 			children = (
 				E29A79461EA549C80075E29C /* Main.storyboard */,
 				E29A794B1EA549C80075E29C /* LaunchScreen.storyboard */,
+				E6FEBDA91ECB9F360039F4FE /* DetailView.swift */,
+				E6FEBDAB1ECBA4AC0039F4FE /* StepView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -128,10 +173,11 @@
 		E29A79611EA54B020075E29C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E6F747621EBA7BEA00984A1F /* RecipeDescription.swift */,
+				E6F747601EBA7BCA00984A1F /* Ingredient.swift */,
+				E6F747591EBA796600984A1F /* CoreData.xcdatamodeld */,
 				E29A79551EA54AE10075E29C /* Recipe.swift */,
-				E22D1DE81EB932B3009FFF6B /* RecipeDescription.swift */,
-				E22D1DE61EB932AB009FFF6B /* Ingredient.swift */,
-				E2D0EF081EB8F36E00DDD549 /* CoreData.xcdatamodeld */,
+				E6B10EEE1EAAA6520010F974 /* RecipeStep.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -139,9 +185,10 @@
 		E29A79621EA54B190075E29C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E6367BA11EC1920900A8D0F0 /* FavoritesTableTableViewController.swift */,
 				E2DAAAE21EA7A49E00A279F5 /* RecipeDetailViewController.swift */,
 				E29A79561EA54AE10075E29C /* RecipesTableViewController.swift */,
-				E22D1DE01EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift */,
+				E6DF23A71EAB6CAD00164CFC /* RecipeStepViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -175,9 +222,17 @@
 		E29A796A1EA55C3F0075E29C /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				E29A79681EA556550075E29C /* Base.swift */,
+				E640F3761EBB8727004D6837 /* Base.swift */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		E65B00241ECCB97700EA308B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E65B00221ECCB88A00EA308B /* AppUtility.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E29A794D1EA549C80075E29C /* LaunchScreen.storyboard in Resources */,
+				E69262DD1EADF5C500AF7431 /* AcousticModelEnglish.bundle in Resources */,
 				E29A794A1EA549C80075E29C /* Assets.xcassets in Resources */,
 				E29A79481EA549C80075E29C /* Main.storyboard in Resources */,
 			);
@@ -264,7 +320,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		210D2FDE438AC1F78FC656B4 /* [CP] Copy Pods Resources */ = {
@@ -304,20 +360,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E640F3771EBB8727004D6837 /* Base.swift in Sources */,
+				E6FEBDAA1ECB9F360039F4FE /* DetailView.swift in Sources */,
+				E6DF23A81EAB6CAD00164CFC /* RecipeStepViewController.swift in Sources */,
 				E29A795B1EA54AE10075E29C /* Recipe.swift in Sources */,
+				E6F747611EBA7BCA00984A1F /* Ingredient.swift in Sources */,
+				E65B00231ECCB88A00EA308B /* AppUtility.swift in Sources */,
 				E29A795D1EA54AE10075E29C /* RecipeTableViewCell.swift in Sources */,
-				E2D0EF0A1EB8F36E00DDD549 /* CoreData.xcdatamodeld in Sources */,
 				E2DAAAE31EA7A49E00A279F5 /* RecipeDetailViewController.swift in Sources */,
+				E6F7475F1EBA7B0F00984A1F /* CoreData.xcdatamodeld in Sources */,
+				E21FA7531EC3AC2D003BC5D8 /* RaisedButton.swift in Sources */,
+				E6F747631EBA7BEA00984A1F /* RecipeDescription.swift in Sources */,
 				E29A795E1EA54AE10075E29C /* RequestManager.swift in Sources */,
 				E24DCDF51EBA370C0090D4BC /* FavoriteTableViewCell.swift in Sources */,
 				E29A795C1EA54AE10075E29C /* RecipesTableViewController.swift in Sources */,
+				E6B10EEF1EAAA6520010F974 /* RecipeStep.swift in Sources */,
 				E29A79431EA549C80075E29C /* AppDelegate.swift in Sources */,
-				E22D1DE91EB932B3009FFF6B /* RecipeDescription.swift in Sources */,
-				E29A79691EA556550075E29C /* Base.swift in Sources */,
-				E22D1DE71EB932AB009FFF6B /* Ingredient.swift in Sources */,
-				E2D0EF0C1EB8F6BE00DDD549 /* CoreDataManager.swift in Sources */,
 				E29A795F1EA54AE10075E29C /* TimeConverter.swift in Sources */,
-				E22D1DE11EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift in Sources */,
+				E640F3781EBB8997004D6837 /* CoreDataManager.swift in Sources */,
+				E6367BA21EC1920900A8D0F0 /* FavoritesTableTableViewController.swift in Sources */,
+				E6FEBDAC1ECBA4AC0039F4FE /* StepView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,10 +506,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 27PM32BCW4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MyRecipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = toma.MyRecipe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toma.myrecipe34221321;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = ./MyRecipe/OpenEarsHeader.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -458,10 +526,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 27PM32BCW4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MyRecipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = toma.MyRecipe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toma.myrecipe34221321;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = ./MyRecipe/OpenEarsHeader.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -490,12 +564,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E2D0EF081EB8F36E00DDD549 /* CoreData.xcdatamodeld */ = {
+		E6F747591EBA796600984A1F /* CoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E2D0EF091EB8F36E00DDD549 /* CoreData.xcdatamodel */,
+				E6F7475A1EBA796600984A1F /* CoreData.xcdatamodel */,
 			);
-			currentVersion = E2D0EF091EB8F36E00DDD549 /* CoreData.xcdatamodel */;
+			currentVersion = E6F7475A1EBA796600984A1F /* CoreData.xcdatamodel */;
 			path = CoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

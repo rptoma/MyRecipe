@@ -5,7 +5,6 @@
 //  Created by Toma Radu-Petrescu on 17/04/2017.
 //  Copyright © 2017 Toma Radu-Petrescu. All rights reserved.
 //
-
 import Foundation
 
 class Base {
@@ -18,6 +17,12 @@ class Base {
     static var RECIPES_LIST_BASE_URL: String! {
         get {
             return "https://myrecipesapi.herokuapp.com/api/v1/recipes?page="
+        }
+    }
+    
+    static var RECIPES_STEPS_LIST_BASE_URL: String! {
+        get {
+            return "https://myrecipesapi.herokuapp.com/api/v1/steps/"
         }
     }
     
